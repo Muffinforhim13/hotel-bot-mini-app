@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Bot - Управление отелями</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--tg-theme-bg-color, #ffffff);
+            color: var(--tg-theme-text-color, #000000);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            color: white;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+        }
+        .header p {
+            font-size: 16px;
+            margin: 0;
+            opacity: 0.9;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        .menu-btn {
+            background: var(--tg-theme-secondary-bg-color, #f8f9fa);
+            border: none;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .menu-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .btn-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        .btn-text {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--tg-theme-text-color, #000000);
+        }
+        .btn-desc {
+            font-size: 14px;
+            color: var(--tg-theme-hint-color, #6c757d);
+        }
+        .smart-automation {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .smart-automation .btn-text,
+        .smart-automation .btn-desc {
+            color: white;
+        }
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e8;
+            border-radius: 10px;
+            color: #2d5a2d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏨 Hotel Bot</h1>
+            <p>Система автоматизации отелей</p>
+        </div>
+
+        <div class="menu-grid">
+            <button class="menu-btn smart-automation" onclick="showSmartAutomation()">
+                <div class="btn-icon">🧠</div>
+                <div class="btn-text">Умная автоматизация</div>
+                <div class="btn-desc">Создать объявления на всех платформах</div>
+            </button>
+
+            <button class="menu-btn" onclick="showRecordingAutomation()">
+                <div class="btn-icon">🎬</div>
+                <div class="btn-text">Автоматизация объявлений</div>
+                <div class="btn-desc">Запись и воспроизведение действий</div>
+            </button>
+
+            <button class="menu-btn" onclick="showPlatforms()">
+                <div class="btn-icon">🏨</div>
+                <div class="btn-text">Платформы</div>
+                <div class="btn-desc">Управление отдельными платформами</div>
+            </button>
+
+            <button class="menu-btn" onclick="showNotifications()">
+                <div class="btn-icon">🔔</div>
+                <div class="btn-text">Уведомления</div>
+                <div class="btn-desc">Настройка уведомлений</div>
+            </button>
+
+            <button class="menu-btn" onclick="showTemplates()">
+                <div class="btn-icon">📋</div>
+                <div class="btn-text">Мои шаблоны</div>
+                <div class="btn-desc">Просмотр сохраненных шаблонов</div>
+            </button>
+
+            <button class="menu-btn" onclick="showSettings()">
+                <div class="btn-icon">⚙️</div>
+                <div class="btn-text">Настройки</div>
+                <div class="btn-desc">Конфигурация бота</div>
+            </button>
+        </div>
+
+        <div class="status">
+            <strong>✅ Mini App работает!</strong><br>
+            Все функции доступны через веб-интерфейс
+        </div>
+    </div>
+
+    <script>
+        // Инициализация Telegram WebApp
+        let tg = window.Telegram.WebApp;
+        
+        // Настройка приложения
+        tg.ready();
+        tg.expand();
+        
+        // Функции для кнопок
+        function showSmartAutomation() {
+            tg.showAlert('🧠 Умная автоматизация\n\nВведите данные один раз, получите объявления на всех платформах!');
+        }
+        
+        function showRecordingAutomation() {
+            tg.showAlert('🎬 Автоматизация объявлений\n\nЗапись и воспроизведение действий для создания объявлений!');
+        }
+        
+        function showPlatforms() {
+            tg.showAlert('🏨 Платформы\n\n• Ostrovok\n• Bronevik\n• 101 Hotels');
+        }
+        
+        function showNotifications() {
+            tg.showAlert('🔔 Уведомления\n\n• Новые бронирования\n• Изменения статуса\n• Ошибки');
+        }
+        
+        function showTemplates() {
+            tg.showAlert('📋 Мои шаблоны\n\nПросмотр сохраненных шаблонов для автоматизации!');
+        }
+        
+        function showSettings() {
+            tg.showAlert('⚙️ Настройки\n\nКонфигурация бота и API ключей!');
+        }
+        
+        // Обработка кнопки "Назад" в Telegram
+        tg.onEvent('backButtonClicked', function() {
+            tg.close();
+        });
+    </script>
+</body>
+</html>
