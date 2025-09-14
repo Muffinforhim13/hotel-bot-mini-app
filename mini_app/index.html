@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Bot - Управление отелями</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Заголовок -->
+        <header class="header">
+            <h1>🏨 Hotel Bot</h1>
+            <p>Система автоматизации отелей</p>
+        </header>
+
+        <!-- Главное меню -->
+        <div class="main-menu" id="mainMenu">
+            <div class="menu-grid">
+                <button class="menu-btn smart-automation" onclick="showSmartAutomation()">
+                    <div class="btn-icon">🧠</div>
+                    <div class="btn-text">Умная автоматизация</div>
+                    <div class="btn-desc">Создать объявления на всех платформах</div>
+                </button>
+
+                <button class="menu-btn recording-automation" onclick="showRecordingAutomation()">
+                    <div class="btn-icon">🎬</div>
+                    <div class="btn-text">Автоматизация объявлений</div>
+                    <div class="btn-desc">Запись и воспроизведение действий</div>
+                </button>
+
+                <button class="menu-btn platforms" onclick="showPlatforms()">
+                    <div class="btn-icon">🏨</div>
+                    <div class="btn-text">Платформы</div>
+                    <div class="btn-desc">Управление отдельными платформами</div>
+                </button>
+
+                <button class="menu-btn notifications" onclick="showNotifications()">
+                    <div class="btn-icon">🔔</div>
+                    <div class="btn-text">Уведомления</div>
+                    <div class="btn-desc">Настройка уведомлений</div>
+                </button>
+
+                <button class="menu-btn templates" onclick="showTemplates()">
+                    <div class="btn-icon">📋</div>
+                    <div class="btn-text">Мои шаблоны</div>
+                    <div class="btn-desc">Просмотр сохраненных шаблонов</div>
+                </button>
+
+                <button class="menu-btn settings" onclick="showSettings()">
+                    <div class="btn-icon">⚙️</div>
+                    <div class="btn-text">Настройки</div>
+                    <div class="btn-desc">Конфигурация бота</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Умная автоматизация -->
+        <div class="section" id="smartAutomation" style="display: none;">
+            <div class="section-header">
+                <button class="back-btn" onclick="showMainMenu()">← Назад</button>
+                <h2>🧠 Умная автоматизация</h2>
+            </div>
+
+            <div class="form-container">
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="smartEmail" placeholder="ваш_email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Пароль:</label>
+                    <input type="password" id="smartPassword" placeholder="ваш_пароль">
+                </div>
+
+                <div class="form-group">
+                    <label>Название отеля:</label>
+                    <input type="text" id="smartHotelName" placeholder="Название отеля">
+                </div>
+
+                <div class="form-group">
+                    <label>Адрес отеля:</label>
+                    <input type="text" id="smartHotelAddress" placeholder="Адрес отеля">
+                </div>
+
+                <div class="form-group">
+                    <label>Тип отеля:</label>
+                    <select id="smartHotelType">
+                        <option value="">Выберите тип</option>
+                        <option value="hotel">Отель</option>
+                        <option value="apartment">Апартаменты</option>
+                        <option value="hostel">Хостел</option>
+                        <option value="guesthouse">Гостевой дом</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Город:</label>
+                    <input type="text" id="smartCity" placeholder="Город">
+                </div>
+
+                <div class="form-group">
+                    <label>Телефон:</label>
+                    <input type="tel" id="smartPhone" placeholder="+7 (xxx) xxx-xx-xx">
+                </div>
+
+                <div class="form-group">
+                    <label>Сайт (необязательно):</label>
+                    <input type="url" id="smartWebsite" placeholder="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Контактное лицо:</label>
+                    <input type="text" id="smartContactName" placeholder="Имя контактного лица">
+                </div>
+
+                <div class="form-group">
+                    <label>Контактный email:</label>
+                    <input type="email" id="smartContactEmail" placeholder="contact@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Описание отеля:</label>
+                    <textarea id="smartDescription" placeholder="Описание отеля" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Удобства (через запятую):</label>
+                    <input type="text" id="smartAmenities" placeholder="Wi-Fi, Парковка, Завтрак">
+                </div>
+
+                <div class="platform-selection">
+                    <h3>Выберите платформы:</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="platformOstrovok" checked>
+                        <span>Ostrovok</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="platformBronevik" checked>
+                        <span>Bronevik</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="platform101Hotels" checked>
+                        <span>101 Hotels</span>
+                    </label>
+                </div>
+
+                <button class="submit-btn" onclick="startSmartAutomation()">
+                    🚀 Создать объявления
+                </button>
+            </div>
+        </div>
+
+        <!-- Автоматизация объявлений -->
+        <div class="section" id="recordingAutomation" style="display: none;">
+            <div class="section-header">
+                <button class="back-btn" onclick="showMainMenu()">← Назад</button>
+                <h2>🎬 Автоматизация объявлений</h2>
+            </div>
+
+            <div class="recording-options">
+                <button class="option-btn" onclick="showRecordActions()">
+                    <div class="btn-icon">📝</div>
+                    <div class="btn-text">Записать действия</div>
+                    <div class="btn-desc">Создать новый шаблон</div>
+                </button>
+
+                <button class="option-btn" onclick="showPlayActions()">
+                    <div class="btn-icon">▶️</div>
+                    <div class="btn-text">Воспроизвести</div>
+                    <div class="btn-desc">Запустить сохраненный шаблон</div>
+                </button>
+
+                <button class="option-btn" onclick="showTemplates()">
+                    <div class="btn-icon">📋</div>
+                    <div class="btn-text">Мои записи</div>
+                    <div class="btn-desc">Просмотр сохраненных шаблонов</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Платформы -->
+        <div class="section" id="platforms" style="display: none;">
+            <div class="section-header">
+                <button class="back-btn" onclick="showMainMenu()">← Назад</button>
+                <h2>🏨 Платформы</h2>
+            </div>
+
+            <div class="platform-list">
+                <div class="platform-item" onclick="openPlatform('ostrovok')">
+                    <div class="platform-icon">🏨</div>
+                    <div class="platform-info">
+                        <h3>Ostrovok</h3>
+                        <p>Платформа бронирования отелей</p>
+                    </div>
+                    <div class="platform-status">✅</div>
+                </div>
+
+                <div class="platform-item" onclick="openPlatform('bronevik')">
+                    <div class="platform-icon">🏨</div>
+                    <div class="platform-info">
+                        <h3>Bronevik</h3>
+                        <p>Система управления бронированиями</p>
+                    </div>
+                    <div class="platform-status">✅</div>
+                </div>
+
+                <div class="platform-item" onclick="openPlatform('101hotels')">
+                    <div class="platform-icon">🏨</div>
+                    <div class="platform-info">
+                        <h3>101 Hotels</h3>
+                        <p>Платформа управления объектами</p>
+                    </div>
+                    <div class="platform-status">✅</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Уведомления -->
+        <div class="section" id="notifications" style="display: none;">
+            <div class="section-header">
+                <button class="back-btn" onclick="showMainMenu()">← Назад</button>
+                <h2>🔔 Уведомления</h2>
+            </div>
+
+            <div class="notification-settings">
+                <div class="setting-item">
+                    <label class="switch">
+                        <input type="checkbox" id="bookingNotifications" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <div class="setting-info">
+                        <h4>Новые бронирования</h4>
+                        <p>Уведомления о новых бронированиях</p>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="switch">
+                        <input type="checkbox" id="statusNotifications" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <div class="setting-info">
+                        <h4>Изменения статуса</h4>
+                        <p>Уведомления об изменениях статуса объявлений</p>
+                    </div>
+                </div>
+
+                <div class="setting-item">
+                    <label class="switch">
+                        <input type="checkbox" id="errorNotifications" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <div class="setting-info">
+                        <h4>Ошибки</h4>
+                        <p>Уведомления об ошибках автоматизации</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Шаблоны -->
+        <div class="section" id="templates" style="display: none;">
+            <div class="section-header">
+                <button class="back-btn" onclick="showMainMenu()">← Назад</button>
+                <h2>📋 Мои шаблоны</h2>
+            </div>
+
+            <div class="templates-list" id="templatesList">
+                <!-- Шаблоны будут загружены динамически -->
+            </div>
+        </div>
+
+        <!-- Настройки -->
+        <div class="section" id="settings" style="display: none;">
+            <div class="section-header">
+                <button class="back-btn" onclick="showMainMenu()">← Назад</button>
+                <h2>⚙️ Настройки</h2>
+            </div>
+
+            <div class="settings-form">
+                <div class="form-group">
+                    <label>Bnovo API Key:</label>
+                    <input type="password" id="bnovoApiKey" placeholder="Введите API ключ">
+                </div>
+
+                <div class="form-group">
+                    <label>Режим отладки:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="debugMode">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <button class="submit-btn" onclick="saveSettings()">
+                    💾 Сохранить настройки
+                </button>
+            </div>
+        </div>
+
+        <!-- Статус операций -->
+        <div class="status-overlay" id="statusOverlay" style="display: none;">
+            <div class="status-content">
+                <div class="status-icon">⏳</div>
+                <div class="status-text" id="statusText">Выполняется операция...</div>
+                <div class="status-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

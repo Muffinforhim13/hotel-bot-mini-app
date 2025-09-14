@@ -1,0 +1,232 @@
+[
+  {
+    "domain": ".extranet.ostrovok.ru",
+    "expiry": 1752506222,
+    "httpOnly": false,
+    "name": "_dn_sid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "66a0725c-36a7-4d41-8ff4-05d0aef8b244"
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1787064421,
+    "httpOnly": false,
+    "name": "_ga_CZQT9MTR3G",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GS2.2.s1752504344$o1$g1$t1752504421$j60$l0$h0"
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1752504480,
+    "httpOnly": false,
+    "name": "_gat",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "1"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1753714020,
+    "httpOnly": false,
+    "name": "sessionid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": ".A6GLorTfhqOalGQShEYChvfeLkz34uLAgFxcOmshK-bOCtcDxyEtu4r5Mt20GzXiEJwAODdsmEny2mN6etvvIsNJwctdzqTla97uAJ8trwtiR_hAqmdyO3Kf__LWs_mkRQFotmFcy4eteOqEIST1568pAS3VrqKRIX0HnwTIapkVMjx41w-jfTR0DegnDwBbNgoRqvEi1w37nHFXQ-F1vbEtMXYJGCbfQQddzfJZTHOwYBH1BbVC7wSduicumrCz3udafUOljf8yXmcPrRx1_WGx7Ozc6Vvu5RrgYh2lF5AROzIRmBUVL9_sz1QouzGlx3aatdiXXAxy1ucW:1ubKSJ:NllWDcPqhH7K-7vZYlKUmxKiiZAKX2C9jcrRGQc3bn0"
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1760280350,
+    "httpOnly": false,
+    "name": "_gcl_au",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "1.1.1936183663.1752504350"
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1787064422,
+    "httpOnly": false,
+    "name": "_ga",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GA1.1.755570023.1752504342"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1784040350,
+    "httpOnly": false,
+    "name": "_hcfnl_hash",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "c8259a79-8199-4895-9bd1-8df16477074a"
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1752506221,
+    "httpOnly": false,
+    "name": "_ym_visorc",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "w"
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1787064422,
+    "httpOnly": false,
+    "name": "_ga_J2E1PNVEGM",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GS2.1.s1752504345$o1$g1$t1752504422$j58$l0$h0"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1753714020,
+    "httpOnly": false,
+    "name": "sesid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "p2bk6yxro5gzcxk9kc8xclsu6y8djvsv"
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1752590820,
+    "httpOnly": false,
+    "name": "_gid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GA1.2.467345222.1752504342"
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1752576341,
+    "httpOnly": false,
+    "name": "_ym_isad",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "2"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1784040420,
+    "httpOnly": false,
+    "name": "uid",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "TfTb5mh1GBOp1Qi9BbXrAg=="
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1784040341,
+    "httpOnly": false,
+    "name": "_ym_uid",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "1752504341382537992"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1784040340,
+    "httpOnly": false,
+    "name": "_hcfnl_incognito",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "0"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1784040421,
+    "httpOnly": false,
+    "name": "userId",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "37301"
+  },
+  {
+    "domain": ".ostrovok.ru",
+    "expiry": 1784040341,
+    "httpOnly": false,
+    "name": "_ym_d",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "1752504341"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1755096344,
+    "httpOnly": false,
+    "name": "_hcfnl_csync_h",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "1347651635"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1787064421,
+    "httpOnly": false,
+    "name": "_hcfnl_funnel_uid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "aHUYFGh1GBQ+Yw6/Nu63Rw=="
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1752508022,
+    "httpOnly": false,
+    "name": "unauthorizedId",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "uaw9fp6hc2a7e4ad8e814baf8e4f415c9cb46e48"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1784040340,
+    "httpOnly": false,
+    "name": "lang",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "ru"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1784040344,
+    "httpOnly": false,
+    "name": "_hcfnl_fpr",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "a5a9cef41a30adbdd6eb019fb9068b84"
+  },
+  {
+    "domain": "extranet.ostrovok.ru",
+    "expiry": 1784040340,
+    "httpOnly": false,
+    "name": "django_language",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "ru"
+  }
+]
