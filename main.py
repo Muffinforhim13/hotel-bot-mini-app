@@ -1,9 +1,13 @@
+from http.server import BaseHTTPRequestHandler
 import json
 import os
 
-def handler(request):
-    """Простой обработчик для Vercel"""
-    try:
+class handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.end_headers()
+        
         # Проверяем переменные окружения
         bot_token = os.getenv('BOT_TOKEN')
         mini_app_url = os.getenv('MINI_APP_URL', 'https://hotel-bot-mini-app.vercel.app')
@@ -16,22 +20,8 @@ def handler(request):
             'version': '1.0.0'
         }
         
-        return {
-            'statusCode': 200,
-            'headers': {
-                'Content-Type': 'application/json'
-            },
-            'body': json.dumps(response)
-        }
-        
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'headers': {
-                'Content-Type': 'application/json'
-            },
-            'body': json.dumps({
-                'error': str(e),
-                'status': 'error'
-            })
-        }
+        self.wfile.write(json.dumps(response).encode())
+        return
+    
+    def do_POST(self):
+        self.do_GET()
